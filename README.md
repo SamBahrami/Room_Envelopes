@@ -137,25 +137,21 @@ python scripts/pytorch3d_render_layout.py \
     --min-frame-id 0 \
     --max-frame-id 100 \
     --keep-classes wall floor window door ceiling \
-```
-
-**Example usage:**
-```bash
-conda activate pytorch3d/
-python scripts/pytorch3d_render_layout.py --pointcloud-directory /path/to/hypersim-pointclouds/ --hypersim-dir /path/to/hypersim --save-dir /path/to/layout-dataset --min-frame-id 0 --max-frame-id 100 --scene ai_001_001/ --verbose
+    --verbose
 ```
 
 **Parameters:**
 - `--pointcloud-directory`: Directory containing the `.ply` and `.npz` files from Step 1
-- `--scene`: Scene to process
+- `--scene`: Scene to process e.g. ai_001_001/
 - `--min-frame-id`: Minimum frame number to process (default: 0). Useful for re-rendering specific frame ranges from a scene
 - `--max-frame-id`: Maximum frame number to process (default 100)
 - `--hypersim-dir`: Path to the root Hypersim dataset directory
 - `--save-dir`: Directory where rendered outputs will be saved
 - `--num-files`: Number of frames to render (default: 100)
 - `--keep-classes`: Semantic classes to include in rendering (defaults to wall floor window door ceiling)
+- `--verbose`: More informative output in terminal
 
-**Output for each frame:**
+**Output for each frame id:**
 - `image.png`: Original RGB image from Hypersim
 - `first_depth.png`: First visible surface depth map 
 - `first_normal.png`: Surface normal map (encoded for MoGe compliance)
@@ -166,15 +162,14 @@ python scripts/pytorch3d_render_layout.py --pointcloud-directory /path/to/hypers
 
 ## Notes
 
-- The two scripts cannot be run in the same environment due to conflicting dependencies between Open3D and PyTorch3D
 - GPU support is recommended for the PyTorch3D rendering step
-- Point cloud downsampling in Step 2 uses a configurable voxel size via the `--voxel-size` parameter (default: 0.00125)
-- Each scene will be processed sequentially and output files will be organized by scene name
+- Point clouds are in metric scale from the Open3D processing step
+- Point cloud downsampling in Step 2 uses a configurable voxel size via the `--voxel-size` parameter (default: 0.00125) since this is in metric scale this is 1.25mm
 - We comply with the CC BY-NC-SA 3.0 license provided by the original Hypersim dataset
 
 ## Citation
 
-If you use this dataset in your research, please cite:
+If you use this dataset in your research, please cite our work:
 
 ```bibtex
 @inproceedings{bahrami2025roomenvelopes,
