@@ -1,9 +1,3 @@
-# conda create -p pytorch3d/ python=3.9 -y
-# conda install pytorch=1.13.0 torchvision pytorch-cuda=11.6 -c pytorch -c nvidia -y
-# conda install -c iopath iopath -y
-# conda install -c bottler nvidiacub -y
-# conda install pytorch3d -c pytorch3d -y
-# pip install -r requirements.txt
 numpy==1.24.3
 pandas
 matplotlib

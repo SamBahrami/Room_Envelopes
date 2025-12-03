@@ -66,6 +66,10 @@ conda activate open3d_env
 # Install dependencies
 pip install open3d
 pip install numpy pandas h5py pathlib tqdm
+
+# For specific versions use 
+# pip install open3d~=0.19.0
+# pip install numpy~=2.2.6 pandas~=2.3.3 h5py~=3.15.1 pathlib tqdm
 ```
 
 ### Generate Point Clouds
