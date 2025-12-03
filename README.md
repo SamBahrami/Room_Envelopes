@@ -5,11 +5,13 @@
 [![🤗 Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Dataset-yellow)](https://huggingface.co/datasets/hugsam/Room_Envelopes)
 
 
-This repository contains scripts for processing Hypersim dataset point clouds and rendering layout information. The pipeline consists of three main steps that require different Python environments.
+We introduce Room Envelopes, a synthetic dataset that provides dual depth representations for indoor scene reconstruction. This repository contains code to generate the Room Envelopes layout dataset. See our paper for information about that dataset. The pipeline consists of three main steps that require different Python environments.
 
 For quick access to the preprocessed data, the dataset is available on [Hugging Face](https://huggingface.co/datasets/hugsam/Room_Envelopes), which includes all scenes that were successfully processed with this method.
 Each tar file contains 5000 image-depth pairs and can be downloaded and used individually.
 Currently, we have released **depth images and normals per view** due to file size constraints (pointmaps are not included).
+
+We have also released the fine-tuned model we trained for layout estimation in Room Envelopes, at the same [Hugging Face](https://huggingface.co/datasets/hugsam/Room_Envelopes) repository (`room_envelopes_layout_model.pt`).
 
 ## Updates
 - 2025/12/03: Released the generation code, dataset used to train the model presented in the Room Envelopes paper, and the model we trained.
