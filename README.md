@@ -7,6 +7,8 @@
 
 We introduce Room Envelopes, a synthetic dataset that provides dual depth representations for indoor scene reconstruction. This repository contains code to generate the Room Envelopes layout dataset. See our paper for information about that dataset. The pipeline consists of three main steps that require different Python environments.
 
+![Room Envelopes Flowchart](github_images/Room%20Envelopes%20Flowchart.png)
+
 For quick access to the preprocessed data, the dataset is available on [Hugging Face](https://huggingface.co/datasets/hugsam/Room_Envelopes), which includes all scenes that were successfully processed with this method.
 Each tar file contains 5000 image-depth pairs and can be downloaded and used individually.
 Currently, we have released **depth images and normals per view** due to file size constraints (pointmaps are not included).
