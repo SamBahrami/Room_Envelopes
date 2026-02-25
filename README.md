@@ -29,6 +29,9 @@ To use our pretrained model, use `moge infer` from the [MoGe](https://github.com
 
 ```
 moge infer -i /path/to/data/example_image.jpg -o /output/directory/ --pretrained hugsam/room_envelopes_model --version v1 --maps --ply --glb
+
+# Or if you have downloaded the model locally
+moge infer -i /path/to/data/example_image.jpg -o /output/directory/ --pretrained /path/to/room_envelopes_layout_model.pt --version v1 --maps --ply --glb
 ```
 
 We include an example in the `data/example_image_inference` folder using `example_image.jpg`, which is a real-world photo.
