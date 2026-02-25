@@ -2,7 +2,8 @@
 
 [![🌐 Project Page](https://img.shields.io/badge/🌐%20Project%20Page-blue)](https://sambahrami.com/room_envelopes)
 [![arXiv](https://img.shields.io/badge/arXiv-2511.03970-b31b1b.svg)](https://arxiv.org/abs/2511.03970)
-[![🤗 Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Dataset-yellow)](https://huggingface.co/datasets/hugsam/Room_Envelopes)
+[![🤗 Hugging Face Dataset](https://img.shields.io/badge/🤗%20Hugging%20Face-Dataset-yellow)](https://huggingface.co/datasets/hugsam/Room_Envelopes)
+[![🤗 Hugging Face Model](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-orange)](https://huggingface.co/hugsam/room_envelopes_model)
 
 
 We introduce Room Envelopes, a synthetic dataset that provides dual depth representations for indoor scene reconstruction. This repository contains code to generate the Room Envelopes layout dataset. See our paper for information about that dataset. The pipeline consists of three main steps that require different Python environments.
@@ -13,21 +14,21 @@ For quick access to the preprocessed data, the dataset is available on [Hugging 
 Each tar file contains 5000 image-depth pairs and can be downloaded and used individually.
 Currently, we have released **depth images and normals per view** due to file size constraints (pointmaps are not included).
 
-We have also released the fine-tuned model we trained for layout estimation in Room Envelopes, at the same [Hugging Face](https://huggingface.co/datasets/hugsam/Room_Envelopes) repository (`room_envelopes_layout_model.pt`).
+We have also released the fine-tuned model we trained for layout estimation in Room Envelopes on [Hugging Face](https://huggingface.co/hugsam/room_envelopes_model).
 
 ## Updates
 - 2025/12/03: Released the generation code, dataset used to train the model presented in the Room Envelopes paper, and the model we trained.
 
 ## Using the Dataset and Pretrained Model
 
-The dataset and pretrained model can be downloaded from our [Hugging Face repository](https://huggingface.co/datasets/hugsam/Room_Envelopes). 
+The dataset can be downloaded from our [Hugging Face dataset repository](https://huggingface.co/datasets/hugsam/Room_Envelopes). The pretrained model can be downloaded from our [Hugging Face model repository](https://huggingface.co/hugsam/room_envelopes_model).
 
 The dataset is compatible with the [MoGe](https://github.com/microsoft/moge) project's file formats. You will need to use the `read_depth`, `write_depth`, `read_normal`, and `write_normal` functions from that library to correctly load our files. These functions are also provided in `scripts/moge_scripts.py` in this repository.
 
-To use our pretrained model, use `moge infer` from the [MoGe](https://github.com/microsoft/moge) library with our pretrained model (`room_envelopes_layout_model.pt`). **Note:** This pretrained model is compatible with **MoGe v1** only, not v2. Use the following command to get started: 
+To use our pretrained model, use `moge infer` from the [MoGe](https://github.com/microsoft/moge) library with our pretrained model. **Note:** This pretrained model is compatible with **MoGe v1** only, not v2. Use the following command to get started: 
 
 ```
-moge infer -i /path/to/data/example_image.jpg -o /output/directory/ --pretrained /path/to/room_envelopes_layout_model.pt --version v1 --maps --ply --glb
+moge infer -i /path/to/data/example_image.jpg -o /output/directory/ --pretrained hugsam/room_envelopes_model --version v1 --maps --ply --glb
 ```
 
 We include an example in the `data/example_image_inference` folder using `example_image.jpg`, which is a real-world photo.
