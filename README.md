@@ -17,7 +17,7 @@ Currently, we have released **depth images and normals per view** due to file si
 We have also released the fine-tuned model we trained for layout estimation in Room Envelopes on [Hugging Face](https://huggingface.co/hugsam/room_envelopes_model).
 
 ## Updates
-- 2026/03/23: We updated the Huggingface dataset to be compliant with HF datasets library, and added re-renderings of the normal and depth maps using a better rendering method which should obfuscate less nearby layout geometry.
+- 2026/03/23: We updated the Huggingface dataset to be compliant with HF datasets library, and added re-renderings of the normal and depth maps using a better rendering method which should render close-to-camera geometry more faithfully.
 - 2025/12/03: Released the generation code, dataset used to train the model presented in the Room Envelopes paper, and the model we trained.
 
 ## Using the Dataset and Pretrained Model
